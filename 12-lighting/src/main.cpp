@@ -58,6 +58,7 @@ int main()
 		glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		defaultShader.Activate();
+		
 
 		// Set camera (depend on user input, tehcnically just moving all models)
 		glm::mat4 view, projection = glm::mat4(1.0f);
