@@ -11,7 +11,6 @@
 
 #include "shader.h"
 
-// template <typename T> how do i get the generic working?
 
 class Controller{
      private:
@@ -31,7 +30,12 @@ class Controller{
 
     public:
         Controller();
-        void setUniform(T value, const char* uniform);
+        
+        template <typename T> // template should be defined all in h file
+        void setUniform(T value, const char* uniform){
+            glUniformMatrix4fv(glGetUniformLocation(shader.ID, uniform), 1, GL_FALSE, glm::value_ptr(value));
+        }
+
         void Poll(GLFWwindow* window);
        
 };

@@ -1,10 +1,6 @@
 #include "controller.h"
 
 
-void Controller::setUniform(T value, glm::mat4 matrix, const char* uniform){
-	glUniformMatrix4fv(glGetUniformLocation(shader.ID, uniform), 1, GL_FALSE, glm::value_ptr(value));
-}
-
 void Controller::Poll(GLFWwindow* window){
 
 	// glfwGetTime is called only once, the first time this function is called
