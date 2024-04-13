@@ -33,17 +33,18 @@ void Camera::handleInput(GLFWwindow* window){
 		eye.x += 0.01f;
 		direction.x += 0.01f;
 	}
+	if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
+	{
+		eye.y += 0.01f;
+		direction.y += 0.01f;
+	}
+	if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
+	{
+		eye.y -= 0.01f;
+		direction.y -= 0.01f;
+	}
 	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 	{
 			exit(0);
 	}
-
-	double mouseX;
-	double mouseY;
-	glfwGetCursorPos(window, &mouseX, &mouseY);
-
-	// Mouse coords are defined by window (top left = 0,0), positive y is downward on screen
-	direction.x = (float)(mouseX - (width / 2)) / width;
-	direction.y = -((float)(mouseY - (height / 2)) / height);
-	
 }
